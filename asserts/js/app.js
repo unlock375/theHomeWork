@@ -73,7 +73,7 @@ function updateClickCounter() {
     for (let i = 0; i < 5; i++) {
         createWord();
     }
-    if (clickCount % 20 === 0) {
+    if (clickCount % 20 === 0 && clickCount > 0) {
       scrollBigWord();
     }
 }
@@ -93,6 +93,16 @@ function scrollBigWord() {
   }, 3000);
 }
 
+function eventReset() {
+  clickCount = 0;
+  clickCounter.textContent = 'リセット！';
+  clickCounter.style.display = 'block';
+  clickCounter.style.color = getRandomColor();
+  setTimeout(() => {
+      clickCounter.style.display = 'none';
+  }, 3000);
+}
+
 document.addEventListener('mousedown', function(event) {
     event.preventDefault(); // デフォルトの動作を防止
     updateClickCounter(event);
@@ -102,6 +112,12 @@ document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     return false;
 }, true);
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'r' || event.key === 'R') {
+    eventReset();
+  }
+});
 
 clickCounter.style.position = 'fixed';
 clickCounter.style.top = '50%';
