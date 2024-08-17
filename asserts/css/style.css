@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  #container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  #bigWord {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    font-weight: bold;
+    transition: bottom 3s linear;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+  }
