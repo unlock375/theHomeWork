@@ -11,6 +11,7 @@ function createWord() {
   word.style.fontSize = '18px';
   word.textContent = getRandomWord();
   word.style.color = getRandomColor();
+  word.style.whiteSpace = 'nowrap';
 
   const startPosition = getRandomPosition();
   word.style.left = startPosition.x + 'px';
@@ -118,13 +119,3 @@ document.addEventListener('keydown', function(event) {
     eventReset();
   }
 });
-
-clickCounter.style.position = 'fixed';
-clickCounter.style.top = '50%';
-clickCounter.style.left = '50%';
-clickCounter.style.transform = 'translate(-50%, -50%)';
-clickCounter.style.fontSize = '100px';
-clickCounter.style.fontWeight = 'bold';
-clickCounter.style.color = '#000';
-clickCounter.style.display = 'none';
-clickCounter.style.zIndex = '1000';
